@@ -40,3 +40,4 @@ Thumbs.db
 
 # Output files
 articles.json
+*.json
