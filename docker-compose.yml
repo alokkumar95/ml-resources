@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  server1:
+    image: nginx:alpine
+    container_name: web_server_1
+    ports: 
+      - "8081:80"
+    restart: always
+
+  server2:
+    image: nginx:alpine
+    container_name: web_server_2
+    ports:
+      - "8082:80"
+    restart: always
+  
+  server3:
+    image: nginx:alpine
+    container_name: web_server_3
+    ports:
+      - "8083:80"
+    restart: always
+    # volumes:
+    #   - ./logs:/var/log/nginx  # Maps local ./logs folder to container's log folder
+
+
+
+# 8082:80 - 8082 is the port on the host machine, and 80 is the port inside the container where Nginx is listening. This means that when you access http://localhost:8082 on your host machine, it will route the request to port 80 of the server2 container.
